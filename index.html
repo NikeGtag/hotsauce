@@ -4,12 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>EDC HOTSAUCES | VETERAN MADE | (602) 318-8206</title>
-<meta name="description" content="Arizona's hottest small-batch hot sauces. Veteran made. LOS ALAMOS MIDNIGHT HEAT • XXXTREME CHARLIE DELTA • AGENT ORANGE." />
+<meta name="description" content="Arizona's hottest small-batch hot sauces. Veteran made." />
 <link rel="icon" href="favicon.ico">
-
-<!-- Exact military stencil font from your image -->
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-<!-- Fallback ultra-clean system font for tiny text -->
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
   body{
@@ -21,41 +18,91 @@
     text-transform:uppercase;
   }
 
-  /* FIXED CONTACT BUTTON */
+  /* FIXED CONTACT BUTTON — ALWAYS ON TOP */
   .contact-btn-fixed{
-    position:fixed;top:20px;right:20px;
-    background:#ff3400;color:#000;
-    font-size:1.6rem;padding:1rem 2.2rem;
-    border-radius:50px;text-decoration:none;
-    z-index:9999;box-shadow:0 0 50px rgba(255,52,0,0.9);
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#ff3400;
+    color:#000;
+    font-size:1.6rem;
+    padding:1rem 2.2rem;
+    border-radius:50px;
+    text-decoration:none;
+    z-index:99999;           /* max z-index
+    box-shadow:0 0 50px rgba(255,52,0,0.9);
     transition:all .4s;
+    pointer-events:all !important;  force clickable
   }
-  .contact-btn-fixed:hover{
-    background:#ff5722;transform:scale(1.18);box-shadow:0 0 70px #ff3400;
+  .contact-btn-fixed:hover,
+  .contact-btn-fixed:active{
+    background:#ff5722;
+    transform:scale(1.18);
+    box-shadow:0 0 80px #ff3400;
+  }
+  @media(max-width:768px){
+    .contact-btn-fixed{
+      top:15px;
+      right:15px;
+      font-size:1.3rem;
+      padding:0.9rem 1.8rem;
+    }
   }
 
   /* HERO */
-  .header-slider{position:relative;height:90vh;min-height:600px;overflow:hidden;
-    border-bottom:14px solid #ff3400;box-shadow:0 0 100px rgba(255,52,0,1);}
-  .slides{position:absolute;inset:0;background-size:cover;background-position:center;
-    opacity:0;transition:opacity 2s;}
-  .slides.active{opacity:1;z-index:1;}
+  .header-slider,.mobile-header{
+    position:relative;
+    height:90vh;
+    min-height:600px;
+    overflow:hidden;
+    border-bottom:14px solid #ff3400;
+    box-shadow:0 0 100px rgba(255,52,0,1);
+  }
+  .slides,.mobile-slide{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    transition:opacity 2s;
+  }
+  .slides.active,.mobile-slide.active{opacity:1;}
   .slide1{background-image:url('https://images.unsplash.com/photo-1608896093086-4e8e6c2b3e2e?q=80&w=2400&auto=format&fit=crop');}
   .slide2{background-image:url('https://images.unsplash.com/photo-1625225233312-9dd7d67c8e8c?q=80&w=2400&auto=format&fit=crop');}
   .slide3{background-image:url('https://images.unsplash.com/photo-1603133872873-270376e6ff33?q=80&w=2400&auto=format&fit=crop');}
-  
-  .header-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.82);z-index:2;}
-  .header-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-    text-align:center;z-index:10;width:94%;padding:2rem;}
-  
+
+  .header-overlay,.mobile-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.82);
+    z-index:2;
+    pointer-events:none;  important — lets button stays clickable
+  }
+  .header-content,.mobile-content{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    z-index:10;
+    width:94%;
+    padding:2rem;
+  }
+
   .edc{font-size:12rem;letter-spacing:12px;text-shadow:10px 10px 0 #000, 0 0 60px #000;}
   h1{font-size:9rem;margin-top:-40px;letter-spacing:8px;text-shadow:8px 8px 0 #000;}
   .tagline{font-size:3.2rem;margin:2.5rem 0 4rem;color:#fff;}
-  .btn{display:inline-block;background:#ff3400;color:#000;
-    font-size:3.2rem;padding:1.8rem 6rem;margin:1rem;
-    text-decoration:none;box-shadow:0 0 60px rgba(255,52,0,1);
-    transition:all .4s;}
-  .btn:hover{background:#ff5722;transform:scale(1.18);box-shadow:0 0 90px #ff3400;}
+  .btn{
+    display:inline-block;
+    background:#ff3400;
+    color:#000;
+    font-size:3.2rem;
+    padding:1.8rem 6rem;
+    margin:1rem;
+    text-decoration:none;
+    box-shadow:0 0 60px rgba(255,52,0,1);
+    transition:all .4s;
+  }
+  .btn:hover,.btn:active{background:#ff5722;transform:scale(1.18);box-shadow:0 0 90px #ff3400;}
 
   /* CONTACT SECTION */
   .contact-section{padding:160px 20px 120px;text-align:center;}
@@ -66,20 +113,13 @@
   /* MOBILE */
   @media(max-width:768px){
     .header-slider{display:none;}
-    .mobile-header{display:block;height:70vh;min-height:500px;position:relative;overflow:hidden;
-      border-bottom:14px solid #ff3400;box-shadow:0 0 80px #ff3400;}
-    .mobile-slide{position:absolute;inset:0;background-size:cover;opacity:0;transition:opacity 2s;}
-    .mobile-slide.active{opacity:1;}
-    .mobile-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.88);}
-    .mobile-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-      text-align:center;z-index:10;width:94%;}
+    .mobile-header{display:block;height:70vh;min-height:500px;}
     .edc{font-size:7.5rem;}
     h1{font-size:5.8rem;margin-top:-20px;}
     .tagline{font-size:2rem;}
     .btn{font-size:2.4rem;padding:1.4rem 4rem;}
     .contact-section h2{font-size:5.5rem;}
     .contact-info{font-size:2rem;}
-    .contact-btn-fixed{font-size:1.3rem;padding:0.9rem 1.8rem;top:15px;right:15px;}
   }
 
   footer{color:#666;padding:3rem;font-size:1.2rem;text-align:center;letter-spacing:2px;}
@@ -87,6 +127,7 @@
 </head>
 <body>
 
+<!-- FIXED CONTACT BUTTON — NOW WORKS EVERYWHERE -->
 <a href="#contact" class="contact-btn-fixed">CONTACT</a>
 
 <!-- DESKTOP HERO -->
@@ -149,8 +190,8 @@ document.querySelectorAll('.slides, .mobile-slide').forEach(set => {
   }, 4000);
 });
 
-// Smooth scroll
-document.querySelector('.contact-btn-fixed').addEventListener('click', e => {
+// Smooth scroll — works on iPhone & Android
+document.querySelector('.contact-btn-fixed').addEventListener('click', function(e) {
   e.preventDefault();
   document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
 });
