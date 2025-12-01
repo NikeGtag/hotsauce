@@ -16,9 +16,10 @@
     letter-spacing:3px;
     overflow-x:hidden;
     text-transform:uppercase;
+    line-height:1.3;
   }
 
-  /* FIXED CONTACT BUTTON — ALWAYS ON TOP */
+  /* FIXED CONTACT BUTTON — ALWAYS CLICKABLE */
   .contact-btn-fixed{
     position:fixed;
     top:20px;
@@ -26,39 +27,29 @@
     background:#ff3400;
     color:#000;
     font-size:1.6rem;
-    padding:1rem 2.2rem;
+    padding:1rem 2.4rem;
     border-radius:50px;
     text-decoration:none;
-    z-index:99999;           /* max z-index
+    z-index:999999;
     box-shadow:0 0 50px rgba(255,52,0,0.9);
     transition:all .4s;
-    pointer-events:all !important;  force clickable
+    pointer-events:all;
   }
-  .contact-btn-fixed:hover,
-  .contact-btn-fixed:active{
-    background:#ff5722;
-    transform:scale(1.18);
-    box-shadow:0 0 80px #ff3400;
-  }
+  .contact-btn-fixed:hover{background:#ff5722;transform:scale(1.18);}
   @media(max-width:768px){
-    .contact-btn-fixed{
-      top:15px;
-      right:15px;
-      font-size:1.3rem;
-      padding:0.9rem 1.8rem;
-    }
+    .contact-btn-fixed{top:15px;right:15px;font-size:1.3rem;padding:0.9rem 1.8rem;}
   }
 
-  /* HERO */
-  .header-slider,.mobile-header{
+  /* HERO — DESKTOP */
+  .header-slider{
     position:relative;
     height:90vh;
     min-height:600px;
-    overflow:hidden;
     border-bottom:14px solid #ff3400;
     box-shadow:0 0 100px rgba(255,52,0,1);
+    overflow:hidden;
   }
-  .slides,.mobile-slide{
+  .slides{
     position:absolute;
     inset:0;
     background-size:cover;
@@ -66,26 +57,25 @@
     opacity:0;
     transition:opacity 2s;
   }
-  .slides.active,.mobile-slide.active{opacity:1;}
+  .slides.active{opacity:1;z-index:1;}
   .slide1{background-image:url('https://images.unsplash.com/photo-1608896093086-4e8e6c2b3e2e?q=80&w=2400&auto=format&fit=crop');}
   .slide2{background-image:url('https://images.unsplash.com/photo-1625225233312-9dd7d67c8e8c?q=80&w=2400&auto=format&fit=crop');}
   .slide3{background-image:url('https://images.unsplash.com/photo-1603133872873-270376e6ff33?q=80&w=2400&auto=format&fit=crop');}
 
-  .header-overlay,.mobile-overlay{
+  .header-overlay{
     position:absolute;
     inset:0;
     background:rgba(0,0,0,0.82);
     z-index:2;
-    pointer-events:none;  important — lets button stays clickable
+    pointer-events:none;
   }
-  .header-content,.mobile-content{
+  .header-content{
     position:absolute;
     top:50%;left:50%;
     transform:translate(-50%,-50%);
     text-align:center;
     z-index:10;
     width:94%;
-    padding:2rem;
   }
 
   .edc{font-size:12rem;letter-spacing:12px;text-shadow:10px 10px 0 #000, 0 0 60px #000;}
@@ -102,18 +92,42 @@
     box-shadow:0 0 60px rgba(255,52,0,1);
     transition:all .4s;
   }
-  .btn:hover,.btn:active{background:#ff5722;transform:scale(1.18);box-shadow:0 0 90px #ff3400;}
+  .btn:hover{background:#ff5722;transform:scale(1.18);}
 
   /* CONTACT SECTION */
-  .contact-section{padding:160px 20px 120px;text-align:center;}
-  .contact-section h2{font-size:9rem;letter-spacing:12px;margin-bottom:60px;}
-  .contact-info{font-size:3rem;line-height:1.6;}
+  .contact-section{
+    padding:160px 20px 120px;
+    text-align:center;
+    background:#000;
+  }
+  .contact-section h2{
+    font-size:9rem;
+    letter-spacing:12px;
+    margin-bottom:60px;
+  }
+  .contact-info{
+    font-size:3rem;
+    line-height:1.8;
+    margin-bottom:60px;
+  }
   .contact-info a{color:#ff3400;text-decoration:none;}
 
-  /* MOBILE */
+  /* MOBILE — CLEAN SWITCH */
   @media(max-width:768px){
-    .header-slider{display:none;}
-    .mobile-header{display:block;height:70vh;min-height:500px;}
+    .header-slider{display:none !important;}
+    .mobile-header{display:block !important;height:70vh;min-height:500px;position:relative;
+      border-bottom:14px solid #ff3400;box-shadow:0 0 80px #ff3400;overflow:hidden;}
+    .mobile-slide{
+      position:absolute;inset:0;background-size:cover;opacity:0;transition:opacity 2s;
+    }
+    .mobile-slide.active{opacity:1;}
+    .mobile-overlay{
+      position:absolute;inset:0;background:rgba(0,0,0,0.88);pointer-events:none;z-index:2;
+    }
+    .mobile-content{
+      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      text-align:center;z-index:10;width:94%;
+    }
     .edc{font-size:7.5rem;}
     h1{font-size:5.8rem;margin-top:-20px;}
     .tagline{font-size:2rem;}
@@ -122,12 +136,17 @@
     .contact-info{font-size:2rem;}
   }
 
-  footer{color:#666;padding:3rem;font-size:1.2rem;text-align:center;letter-spacing:2px;}
+  footer{
+    color:#666;
+    padding:3rem;
+    font-size:1.2rem;
+    text-align:center;
+    letter-spacing:2px;
+  }
 </style>
 </head>
 <body>
 
-<!-- FIXED CONTACT BUTTON — NOW WORKS EVERYWHERE -->
 <a href="#contact" class="contact-btn-fixed">CONTACT</a>
 
 <!-- DESKTOP HERO -->
@@ -159,7 +178,7 @@
   </div>
 </header>
 
-<!-- CONTACT SECTION -->
+<!-- CONTACT -->
 <section class="contact-section" id="contact">
   <h2>CONTACT</h2>
   <div class="contact-info">
@@ -169,7 +188,7 @@
     EMAIL ORDERS & WHOLESALE<br>
     <a href="mailto:Jakeus2.0@gmail.com">JAKEUS2.0@GMAIL.COM</a>
   </div>
-  <div style="margin-top:70px;">
+  <div>
     <a href="tel:+16023188206" class="btn">CALL NOW</a>
     <a href="mailto:Jakeus2.0@gmail.com" class="btn">EMAIL NOW</a>
   </div>
@@ -190,8 +209,8 @@ document.querySelectorAll('.slides, .mobile-slide').forEach(set => {
   }, 4000);
 });
 
-// Smooth scroll — works on iPhone & Android
-document.querySelector('.contact-btn-fixed').addEventListener('click', function(e) {
+// Smooth scroll — 100% mobile compatible
+document.querySelector('.contact-btn-fixed').addEventListener('click', e => {
   e.preventDefault();
   document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
 });
