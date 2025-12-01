@@ -59,45 +59,44 @@
     line-height:0.78;
   }
 
-  /* MOBILE — UNTOUCHED (your last working version) */
+  /* MOBILE — UNTOUCHED, PERFECT */
   @media(max-width:768px){
     .hero{min-height:620px;}
-    .edc{
-      font-size:20vw;
-      letter-spacing:4vw;
-      -webkit-text-stroke:6px #000;
-      margin-bottom:-11vw;
-    }
+    .edc{font-size:20vw;letter-spacing:4vw;-webkit-text-stroke:6px #000;margin-bottom:-11vw;}
     h1{font-size:13vw;letter-spacing:2.5vw;margin-top:0;}
     .tagline{font-size:8vw;color:#fff;margin:14vw 0 12vw;letter-spacing:5px;}
-    .btn{
-      display:block;width:88%;max-width:420px;margin:18px auto;
-      font-size:9.5vw;padding:5.5vw 0;border-radius:16px;
-      background:#ff3400;color:#000;box-shadow:0 0 90px #ff3400;
-    }
+    .btn{display:block;width:88%;max-width:420px;margin:18px auto;
+         font-size:9.5vw;padding:5.5vw 0;border-radius:16px;
+         background:#ff3400;color:#000;box-shadow:0 0 90px #ff3400;}
   }
 
-  /* DESKTOP ONLY — FIXED OVERLAP */
+  /* DESKTOP — FIXED FOREVER */
   @media(min-width:769px){
     .content{
-      padding-top:0; /* reset any previous shift */
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      height:100%;
+      gap:0; /* no extra space */
     }
     .edc{
-      font-size:380px;           /* huge */
+      font-size:380px;
       letter-spacing:26px;
-      margin-bottom:-160px;      /* pulls HOTSAUCES up without overlap */
+      margin-bottom:-65px;     /* THIS is the magic number */
+      padding-bottom:0;
     }
     h1{
       font-size:220px;
       letter-spacing:14px;
-      margin-top:0;
-      margin-bottom:40px;
+      margin:0;
+      padding:0;
     }
     .tagline{
       font-size:52px;
       color:#fff;
       letter-spacing:12px;
-      margin:40px 0 80px;
+      margin:90px 0 100px 0;
     }
     .btn{
       display:inline-block;
