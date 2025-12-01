@@ -35,32 +35,33 @@
     line-height:0.8;
   }
 
-  /* MOBILE ONLY — EDC IS NOW INSANELY BOLD */
+  /* MOBILE — EDC IS NOW A FUCKING BRICK WALL NOW */
   @media(max-width:768px){
     .edc{
-      font-size:26vw !important;                    /* even bigger */
-      letter-spacing:6vw !important;
-      -webkit-text-stroke:14px #000 !important;     /* nuclear thick outline */
-      text-stroke:14px #000 !important;
-      text-shadow: 8px 8px 0px #000;                /* extra punch */
+      font-size:26vw;
+      letter-spacing:6vw;
+      -webkit-text-stroke:18px #000 !important;     /* 18px = THICC */
+      text-stroke:18px #000 !important;
+      text-shadow: 
+        0 0 20px #000,
+        6px 6px 0 #000,
+        -6px -6px 0 #000,
+        6px -6px 0 #000,
+        -6px 6px 0 #000;                     /* extra layers of black for maximum weight */
       margin-bottom:-6vw;
     }
     h1{
       font-size:13vw;
       letter-spacing:2.5vw;
-      margin-top:10vw;           /* keeps HOTSAUCES low as you wanted */
+      margin-top:10vw;
     }
-    .tagline{
-      font-size:8vw;color:#fff;margin:16vw 0 14vw;letter-spacing:5px;
-    }
-    .btn{
-      display:block;width:88%;max-width:420px;margin:20px auto;
-      font-size:9.5vw;padding:5.5vw 0;border-radius:16px;
-      background:#ff3400;color:#000;box-shadow:0 0 90px #ff3400;
-    }
+    .tagline{font-size:8vw;color:#fff;margin:16vw 0 14vw;letter-spacing:5px;}
+    .btn{display:block;width:88%;max-width:420px;margin:20px auto;
+         font-size:9.5vw;padding:5.5vw 0;border-radius:16px;
+         background:#ff3400;color:#000;box-shadow:0 0 90px #ff3400;}
   }
 
-  /* DESKTOP — STILL PERFECT, UNTOUCHED */
+  /* DESKTOP — STILL PERFECT */
   @media(min-width:769px){
     .edc{font-size:420px;letter-spacing:28px;}
     h1{font-size:190px;letter-spacing:14px;}
@@ -118,7 +119,6 @@
 <footer>© 2025 EDC HOTSAUCES • VETERAN OWNED • ARIZONA</footer>
 
 <script>
-// Desktop stays perfect
 function fixDesktop() {
   if (window.innerWidth <= 768) return;
   document.querySelector('.content').style.transform = 'translate(-50%, -40%)';
@@ -126,7 +126,6 @@ function fixDesktop() {
 window.addEventListener('load', fixDesktop);
 window.addEventListener('resize', fixDesktop);
 
-// Slider
 let i = 0;
 const slides = document.querySelectorAll('.slides');
 setInterval(() => {
