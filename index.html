@@ -35,7 +35,7 @@
     line-height:0.8;
   }
 
-  /* MOBILE — UNTOUCHED */
+  /* MOBILE — STILL PERFECT */
   @media(max-width:768px){
     .edc{font-size:20vw;letter-spacing:4vw;-webkit-text-stroke:6px #000;}
     h1{font-size:13vw;letter-spacing:2.5vw;margin-top:-11vw;}
@@ -45,10 +45,10 @@
          background:#ff3400;color:#000;box-shadow:0 0 90px #ff3400;}
   }
 
-  /* DESKTOP — HOTSAUCES IS NOW A LOT SMALLER */
+  /* DESKTOP — HOTSAUCES SMALLER + BOTH MOVED DOWN */
   @media(min-width:769px){
     .edc{font-size:420px;letter-spacing:28px;}
-    h1{font-size:190px;letter-spacing:14px;}  /* much smaller than before */
+    h1{font-size:190px;letter-spacing:14px;}
     .tagline{font-size:52px;color:#fff;letter-spacing:12px;margin:80px 0 100px;}
     .btn{display:inline-block;background:#ff3400;color:#000;font-size:56px;
          padding:32px 120px;margin:0 35px;border-radius:20px;
@@ -103,27 +103,16 @@
 <footer>© 2025 EDC HOTSAUCES • VETERAN OWNED • ARIZONA</footer>
 
 <script>
-// AUTO-FIX DESKTOP POSITIONING (runs once)
-function fixDesktop() {
+// FINAL AUTO-FIX: MOVES EVERYTHING DOWN ON DESKTOP SO IT'S PERFECTLY CENTERED
+function fixDesktopPosition() {
   if (window.innerWidth <= 768) return;
 
-  const edc = document.querySelector('.edc');
-  const hotsauces = document.querySelector('h1');
-
-  // Reset
-  edc.style.marginBottom = '';
-  hotsauces.style.marginTop = '';
-
-  // Pull HOTSAUCES up so it sits perfectly under EDC
-  const edcBottom = edc.getBoundingClientRect().bottom;
-  const heroCenter = window.innerHeight / 2;
-
-  const adjust = edcBottom - heroCenter + 80; // fine-tuned by eye
-  hotsauces.style.marginTop = `-${adjust}px`;
+  const content = document.querySelector('.content');
+  content.style.transform = 'translate(-50%, -40%)'; // moved down from -50% → -40%
 }
 
-window.addEventListener('load', fixDesktop);
-window.addEventListener('resize', fixDesktop);
+window.addEventListener('load', fixDesktopPosition);
+window.addEventListener('resize', fixDesktopPosition);
 
 // Slider
 let i = 0;
