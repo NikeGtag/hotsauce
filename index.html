@@ -13,136 +13,109 @@
     font-family:'Anton', Impact, sans-serif;
     background:#000;
     color:#ff3400;
-    letter-spacing:3px;
+    letter-spacing:4px;
     overflow-x:hidden;
     text-transform:uppercase;
-    line-height:1.3;
   }
 
-  /* FIXED CONTACT BUTTON — ALWAYS CLICKABLE */
+  /* FIXED CONTACT BUTTON */
   .contact-btn-fixed{
-    position:fixed;
-    top:20px;
-    right:20px;
-    background:#ff3400;
-    color:#000;
-    font-size:1.6rem;
-    padding:1rem 2.4rem;
-    border-radius:50px;
-    text-decoration:none;
-    z-index:999999;
-    box-shadow:0 0 50px rgba(255,52,0,0.9);
+    position:fixed;top:20px;right:20px;
+    background:#ff3400;color:#000;
+    font-size:1.7rem;padding:1.1rem 2.5rem;
+    border-radius:50px;text-decoration:none;
+    z-index:999999;box-shadow:0 0 60px rgba(255,52,0,1);
     transition:all .4s;
-    pointer-events:all;
   }
-  .contact-btn-fixed:hover{background:#ff5722;transform:scale(1.18);}
-  @media(max-width:768px){
-    .contact-btn-fixed{top:15px;right:15px;font-size:1.3rem;padding:0.9rem 1.8rem;}
-  }
+  .contact-btn-fixed:hover{background:#ff5722;transform:scale(1.2);}
+  @media(max-width:768px){.contact-btn-fixed{top:15px;right:15px;font-size:1.4rem;padding:1rem 2rem;}}
 
-  /* HERO — DESKTOP */
-  .header-slider{
-    position:relative;
-    height:90vh;
-    min-height:600px;
-    border-bottom:14px solid #ff3400;
-    box-shadow:0 0 100px rgba(255,52,0,1);
+  /* HERO */
+  .header-slider,.mobile-header{
+    position:relative;height:90vh;min-height:600px;
+    border-bottom:16px solid #ff3400;
+    box-shadow:0 0 120px rgba(255,52,0,1);
     overflow:hidden;
   }
-  .slides{
-    position:absolute;
-    inset:0;
-    background-size:cover;
-    background-position:center;
-    opacity:0;
-    transition:opacity 2s;
+  .slides,.mobile-slide{
+    position:absolute;inset:0;background-size:cover;background-position:center;
+    opacity:0;transition:opacity 2s;
   }
-  .slides.active{opacity:1;z-index:1;}
+  .slides.active,.mobile-slide.active{opacity:1;}
+
   .slide1{background-image:url('https://images.unsplash.com/photo-1608896093086-4e8e6c2b3e2e?q=80&w=2400&auto=format&fit=crop');}
   .slide2{background-image:url('https://images.unsplash.com/photo-1625225233312-9dd7d67c8e8c?q=80&w=2400&auto=format&fit=crop');}
   .slide3{background-image:url('https://images.unsplash.com/photo-1603133872873-270376e6ff33?q=80&w=2400&auto=format&fit=crop');}
 
-  .header-overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.82);
-    z-index:2;
-    pointer-events:none;
-  }
-  .header-content{
-    position:absolute;
-    top:50%;left:50%;
-    transform:translate(-50%,-50%);
-    text-align:center;
-    z-index:10;
-    width:94%;
+  .header-overlay,.mobile-overlay{
+    position:absolute;inset:0;background:rgba(0,0,0,0.85);
+    z-index:2;pointer-events:none;
   }
 
-  .edc{font-size:12rem;letter-spacing:12px;text-shadow:10px 10px 0 #000, 0 0 60px #000;}
-  h1{font-size:9rem;margin-top:-40px;letter-spacing:8px;text-shadow:8px 8px 0 #000;}
-  .tagline{font-size:3.2rem;margin:2.5rem 0 4rem;color:#fff;}
+  .header-content,.mobile-content{
+    position:absolute;top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;z-index:10;width:96%;
+  }
+
+  /* EDC = GOD MODE */
+  .edc{
+    font-size:18rem;           /* huge on desktop */
+    letter-spacing:18px;
+    color:#ff3400;
+    text-shadow:
+      12px 12px 0 #000,
+      -12px -12px 0 #000,
+      0 0 80px #ff3400,
+      0 0 0 120px #ff0000;
+    line-height:0.8;
+    animation: glow 3s infinite alternate;
+  }
+  @keyframes glow{from{text-shadow:12px 12px 0 #000,-12px -12px 0 #000,0 0 80px #ff3400,0 0 120px #ff0000;}
+                 to{text-shadow:15px 15px 0 #000,-15px -15px 0 #000,0 0 100px #ff3400,0 0 160px #ff0000;}}
+
+  h1{
+    font-size:9rem;
+    margin-top:-60px;
+    letter-spacing:10px;
+    text-shadow:10px 10px 0 #000;
+  }
+  .tagline{
+    font-size:3.4rem;
+    margin:3rem 0 4.5rem;
+    color:#fff;
+    letter-spacing:6px;
+  }
   .btn{
     display:inline-block;
-    background:#ff3400;
-    color:#000;
-    font-size:3.2rem;
-    padding:1.8rem 6rem;
-    margin:1rem;
+    background:#ff3400;color:#000;
+    font-size:3.4rem;padding:2rem 7rem;
+    margin:1.5rem;
     text-decoration:none;
-    box-shadow:0 0 60px rgba(255,52,0,1);
+    box-shadow:0 0 80px rgba(255,52,0,1);
     transition:all .4s;
   }
-  .btn:hover{background:#ff5722;transform:scale(1.18);}
+  .btn:hover{background:#ff5722;transform:scale(1.2);box-shadow:0 0 110px #ff3400;}
 
   /* CONTACT SECTION */
-  .contact-section{
-    padding:160px 20px 120px;
-    text-align:center;
-    background:#000;
-  }
-  .contact-section h2{
-    font-size:9rem;
-    letter-spacing:12px;
-    margin-bottom:60px;
-  }
-  .contact-info{
-    font-size:3rem;
-    line-height:1.8;
-    margin-bottom:60px;
-  }
-  .contact-info a{color:#ff3400;text-decoration:none;}
+  .contact-section{padding:180px 20px 140px;text-align:center;}
+  .contact-section h2{font-size:10rem;letter-spacing:16px;margin-bottom:80px;}
+  .contact-info{font-size:3.2rem;line-height:1.8;margin-bottom:80px;}
+  .contact-info a{color:#ff3400;}
 
-  /* MOBILE — CLEAN SWITCH */
+  /* MOBILE — EDC STILL DOMINATES */
   @media(max-width:768px){
     .header-slider{display:none !important;}
-    .mobile-header{display:block !important;height:70vh;min-height:500px;position:relative;
-      border-bottom:14px solid #ff3400;box-shadow:0 0 80px #ff3400;overflow:hidden;}
-    .mobile-slide{
-      position:absolute;inset:0;background-size:cover;opacity:0;transition:opacity 2s;
-    }
-    .mobile-slide.active{opacity:1;}
-    .mobile-overlay{
-      position:absolute;inset:0;background:rgba(0,0,0,0.88);pointer-events:none;z-index:2;
-    }
-    .mobile-content{
-      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-      text-align:center;z-index:10;width:94%;
-    }
-    .edc{font-size:7.5rem;}
-    h1{font-size:5.8rem;margin-top:-20px;}
-    .tagline{font-size:2rem;}
-    .btn{font-size:2.4rem;padding:1.4rem 4rem;}
-    .contact-section h2{font-size:5.5rem;}
-    .contact-info{font-size:2rem;}
+    .mobile-header{display:block !important;height:70vh;min-height:520px;}
+    .edc{font-size:11rem;letter-spacing:10px;}
+    h1{font-size:6.5rem;margin-top:-30px;}
+    .tagline{font-size:2.2rem;margin:2rem 0;}
+    .btn{font-size:2.6rem;padding:1.6rem 5rem;}
+    .contact-section h2{font-size:6.5rem;}
+    .contact-info{font-size:2.2rem;}
   }
 
-  footer{
-    color:#666;
-    padding:3rem;
-    font-size:1.2rem;
-    text-align:center;
-    letter-spacing:2px;
-  }
+  footer{color:#888;padding:4rem;font-size:1.4rem;text-align:center;letter-spacing:3px;}
 </style>
 </head>
 <body>
@@ -188,10 +161,8 @@
     EMAIL ORDERS & WHOLESALE<br>
     <a href="mailto:Jakeus2.0@gmail.com">JAKEUS2.0@GMAIL.COM</a>
   </div>
-  <div>
-    <a href="tel:+16023188206" class="btn">CALL NOW</a>
-    <a href="mailto:Jakeus2.0@gmail.com" class="btn">EMAIL NOW</a>
-  </div>
+  <a href="tel:+16023188206" class="btn">CALL NOW</a>
+  <a href="mailto:Jakeus2.0@gmail.com" class="btn">EMAIL NOW</a>
 </section>
 
 <footer>
@@ -209,7 +180,7 @@ document.querySelectorAll('.slides, .mobile-slide').forEach(set => {
   }, 4000);
 });
 
-// Smooth scroll — 100% mobile compatible
+// Smooth scroll
 document.querySelector('.contact-btn-fixed').addEventListener('click', e => {
   e.preventDefault();
   document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
