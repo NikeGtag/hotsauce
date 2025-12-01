@@ -11,6 +11,33 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   body{font-family:'Inter',sans-serif;background:#000;color:#ff3400;overflow-x:hidden;}
   
+  /* FIXED CONTACT BUTTON - TOP RIGHT */
+  .contact-btn-fixed{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#ff3400;
+    color:#000;
+    font-family:'Staatliches',sans-serif;
+    font-size:1.4rem;
+    letter-spacing:3px;
+    font-weight:900;
+    padding:1rem 2rem;
+    border-radius:50px;
+    text-decoration:none;
+    z-index:9999;
+    box-shadow:0 0 40px rgba(255,52,0,0.9);
+    transition:all .4s;
+  }
+  .contact-btn-fixed:hover{
+    background:#ff5722;
+    transform:scale(1.15);
+    box-shadow:0 0 60px rgba(255,87,34,1);
+  }
+  @media(max-width:768px){
+    .contact-btn-fixed{top:15px;right:15px;font-size:1.2rem;padding:0.9rem 1.6rem;}
+  }
+
   /* HERO */
   .header-slider{position:relative;height:90vh;min-height:600px;overflow:hidden;border-bottom:12px solid #ff3400;box-shadow:0 0 90px rgba(255,52,0,0.9);}
   .slides{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 2s;}
@@ -27,13 +54,14 @@
   .tagline{font-size:2.8rem;margin:2rem 0 3rem;color:#fff;font-weight:900;letter-spacing:3px;}
   .btn{display:inline-block;background:#ff3400;color:#000;font-family:'Staatliches',sans-serif;font-size:2.8rem;padding:1.6rem 5rem;border-radius:0;text-decoration:none;margin:1.5rem;transition:all .4s;box-shadow:0 0 50px rgba(255,52,0,1);}
   .btn:hover{background:#ff5722;transform:scale(1.15);box-shadow:0 0 70px rgba(255,87,34,1);}
-  
+
   /* CONTACT SECTION */
-  .contact-section{padding:120px 20px;background:#000;text-align:center;}
-  .contact-section h2{font-family:'Staatliches',sans-serif;font-size:7rem;letter-spacing:8px;margin-bottom:40px;}
-  .contact-info{font-size:2.4rem;font-weight:900;margin:40px 0;}
-  .contact-info a{color:#ff3400;text-decoration:none;}
-  
+  .contact-section{padding:140px 20px 100px;background:#000;text-align:center;}
+  .contact-section h2{font-family:'Staatliches',sans-serif;font-size:7.5rem;letter-spacing:10px;margin-bottom:50px;}
+  .contact-info{font-size:2.6rem;font-weight:900;line-height:1.8;}
+  .contact-info a{color:#ff3400;text-decoration:none;transition:0.3s;}
+  .contact-info a:hover{opacity:0.7;}
+
   /* MOBILE */
   @media(max-width:768px){
     .header-slider{display:none;}
@@ -46,14 +74,17 @@
     h1{font-size:5.5rem;margin-top:-20px;}
     .tagline{font-size:2rem;}
     .btn{font-size:2.4rem;padding:1.2rem 3.5rem;}
-    .contact-section h2{font-size:4.5rem;}
-    .contact-info{font-size:1.8rem;}
+    .contact-section h2{font-size:5rem;}
+    .contact-info{font-size:1.9rem;}
   }
-  
+
   footer{background:#000;color:#888;padding:3rem 0;font-size:1.1rem;text-align:center;}
 </style>
 </head>
 <body>
+
+<!-- FIXED CONTACT BUTTON -->
+<a href="#contact" class="contact-btn-fixed">CONTACT</a>
 
 <!-- DESKTOP HERO -->
 <header class="header-slider">
@@ -85,16 +116,18 @@
 </header>
 
 <!-- CONTACT SECTION -->
-<section class="contact-section">
+<section class="contact-section" id="contact">
   <h2>CONTACT</h2>
   <div class="contact-info">
     <p>CALL OR TEXT 24/7<br>
     <a href="tel:+16023188206">(602) 318-8206</a></p>
-    <p style="margin-top:50px;">EMAIL ORDERS & WHOLESALE<br>
+    <p style="margin-top:60px;">EMAIL ORDERS & WHOLESALE<br>
     <a href="mailto:Jakeus2.0@gmail.com">Jakeus2.0@gmail.com</a></p>
   </div>
-  <a href="tel:+16023188206" class="btn">CALL NOW</a>
-  <a href="mailto:Jakeus2.0@gmail.com" class="btn">EMAIL NOW</a>
+  <div style="margin-top:60px;">
+    <a href="tel:+16023188206" class="btn">CALL NOW</a>
+    <a href="mailto:Jakeus2.0@gmail.com" class="btn">EMAIL NOW</a>
+  </div>
 </section>
 
 <footer>
@@ -102,7 +135,7 @@
 </footer>
 
 <script>
-// Shared slider
+// Slider (both desktop + mobile)
 document.querySelectorAll('.slides, .mobile-slide').forEach(set => {
   let i = 0;
   setInterval(() => {
@@ -110,6 +143,12 @@ document.querySelectorAll('.slides, .mobile-slide').forEach(set => {
     i = (i + 1) % set.length;
     set[i].classList.add('active');
   }, 4200);
+});
+
+// Smooth scroll for fixed button
+document.querySelector('.contact-btn-fixed').addEventListener('click', e => {
+  e.preventDefault();
+  document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
 });
 </script>
 </body>
