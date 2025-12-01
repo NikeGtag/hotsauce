@@ -4,111 +4,54 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>EDC HOTSAUCES | VETERAN MADE | (602) 318-8206</title>
-<link rel="icon" href="favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{
-    font-family:'Anton', Impact, sans-serif;
-    background:#000;
-    color:#ff3400;
-    text-transform:uppercase;
-    overflow-x:hidden;
-  }
+  body{font-family:'Anton', Impact, sans-serif;background:#000;color:#ff3400;text-transform:uppercase;overflow-x:hidden;}
 
   .contact-btn-fixed{
-    position:fixed;top:20px;right:20px;
-    background:#ff3400;color:#000;
-    font-size:1.8rem;padding:1rem 3rem;
-    border-radius:50px;z-index:999999;
-    box-shadow:0 0 70px #ff3400;transition:.4s;
+    position:fixed;top:20px;right:20px;background:#ff3400;color:#000;font-size:1.8rem;
+    padding:1rem 3rem;border-radius:50px;z-index:999999;box-shadow:0 0 70px #ff3400;transition:.4s;
   }
   .contact-btn-fixed:hover{transform:scale(1.2);background:#ff5722;}
-  @media(max-width:768px){
-    .contact-btn-fixed{top:12px;right:12px;font-size:1.5rem;padding:0.9rem 2.2rem;}
-  }
+  @media(max-width:768px){.contact-btn-fixed{top:12px;right:12px;font-size:1.5rem;padding:0.9rem 2.2rem;}}
 
-  .hero{
-    position:relative;
-    height:100vh;
-    min-height:700px;
-    border-bottom:18px solid #ff3400;
-    box-shadow:0 0 140px rgba(255,52,0,1);
-    overflow:hidden;
-  }
-  .slides{
-    position:absolute;inset:0;background-size:cover;background-position:center;
-    opacity:0;transition:opacity 2s;
-  }
+  .hero{position:relative;height:100vh;min-height:700px;border-bottom:18px solid #ff3400;
+    box-shadow:0 0 140px rgba(255,52,0,1);overflow:hidden;}
+  .slides{position:absolute;inset:0;background-size:cover;background-position:center;
+    opacity:0;transition:opacity 2s;}
   .slides.active{opacity:1;}
-  .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.88);pointer-events:none;z-index:2;}
+  .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.88);z-index:2;}
 
   .content{
-    position:absolute;top:50%;left:50%;
-    transform:translate(-50%,-50%);
-    text-align:center;z-index:10;
-    width:96%;
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    text-align:center;z-index:10;width:96%;
   }
 
-  /* EDC — BLACK OUTLINE */
   .edc{
     color:#ff3400;
     -webkit-text-stroke:9px #000;
-    text-stroke:9px #000;
     font-weight:900;
-    line-height:0.78;
+    line-height:0.8;
   }
 
-  /* MOBILE — UNTOUCHED, PERFECT */
+  @media(min-width:769px){
+    .edc{font-size:420px;letter-spacing:28px;}
+    h1{font-size:300px;letter-spacing:18px;}
+    .tagline{font-size:52px;color:#fff;letter-spacing:12px;margin:60px 0 90px;}
+    .btn{display:inline-block;background:#ff3400;color:#000;font-size:56px;
+         padding:32px 120px;margin:0 35px;border-radius:20px;
+         box-shadow:0 0 110px #ff3400;transition:.4s;}
+    .btn:hover{transform:scale(1.15);background:#ff5722;}
+  }
+
   @media(max-width:768px){
-    .hero{min-height:620px;}
-    .edc{font-size:20vw;letter-spacing:4vw;-webkit-text-stroke:6px #000;margin-bottom:-11vw;}
-    h1{font-size:13vw;letter-spacing:2.5vw;margin-top:0;}
+    .edc{font-size:20vw;letter-spacing:4vw;-webkit-text-stroke:6px #000;}
+    h1{font-size:13vw;letter-spacing:2.5vw;margin-top:-11vw;}
     .tagline{font-size:8vw;color:#fff;margin:14vw 0 12vw;letter-spacing:5px;}
     .btn{display:block;width:88%;max-width:420px;margin:18px auto;
          font-size:9.5vw;padding:5.5vw 0;border-radius:16px;
          background:#ff3400;color:#000;box-shadow:0 0 90px #ff3400;}
-  }
-
-  /* DESKTOP — FIXED FOREVER */
-  @media(min-width:769px){
-    .content{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      height:100%;
-      gap:0; /* no extra space */
-    }
-    .edc{
-      font-size:380px;
-      letter-spacing:26px;
-      margin-bottom:-65px;     /* THIS is the magic number */
-      padding-bottom:0;
-    }
-    h1{
-      font-size:220px;
-      letter-spacing:14px;
-      margin:0;
-      padding:0;
-    }
-    .tagline{
-      font-size:52px;
-      color:#fff;
-      letter-spacing:12px;
-      margin:90px 0 100px 0;
-    }
-    .btn{
-      display:inline-block;
-      background:#ff3400;color:#000;
-      font-size:56px;
-      padding:32px 120px;
-      margin:0 35px;
-      border-radius:20px;
-      box-shadow:0 0 110px #ff3400;
-      transition:.4s;
-    }
-    .btn:hover{transform:scale(1.15);background:#ff5722;}
   }
 
   .slide1{background-image:url('https://images.unsplash.com/photo-1608896093086-4e8e6c2b3e2e?q=80&w=2400&auto=format&fit=crop');}
@@ -119,10 +62,7 @@
   .contact-section h2{font-size:120px;letter-spacing:18px;margin-bottom:80px;color:#ff3400;}
   .contact-info{font-size:46px;line-height:1.8;color:#ff3400;}
   .contact-info a{color:#ff3400;text-decoration:none;}
-  @media(max-width:768px){
-    .contact-section h2{font-size:64px;}
-    .contact-info{font-size:30px;}
-  }
+  @media(max-width:768px){.contact-section h2{font-size:64px;}.contact-info{font-size:30px;}}
 
   footer{color:#888;padding:70px 20px;font-size:22px;text-align:center;letter-spacing:4px;}
 </style>
@@ -158,13 +98,45 @@
   <a href="mailto:Jakeus2.0@gmail.com" class="btn">EMAIL NOW</a>
 </section>
 
-<footer>
-  © 2025 EDC HOTSAUCES • VETERAN OWNED • ARIZONA
-</footer>
+<footer>© 2025 EDC HOTSAUCES • VETERAN OWNED • ARIZONA</footer>
 
 <script>
-const slides = document.querySelectorAll('.slides');
+// AUTO-FIX DESKTOP OVERLAP — RUNS ONCE AND DONE
+function fixDesktopOverlap() {
+  if (window.innerWidth <= 768) return; // leave mobile alone
+
+  const edc = document.querySelector('.edc');
+  const hotsauces = document.querySelector('h1');
+
+  // Reset any previous inline styles
+  edc.style.marginBottom = '';
+  hotsauces.style.marginTop = '';
+
+  // Measure actual rendered heights
+  const edcHeight = edc.offsetHeight;
+  const hotsaucesHeight = hotsauces.offsetHeight;
+
+  // Magic number: how much they should overlap (negative = pull up)
+  const desiredOverlap = 180; // tweak this once if needed (160–200 works)
+
+  const totalHeight = edcHeight + hotsaucesHeight - desiredOverlap;
+  const availableSpace = window.innerHeight * 0.7; // rough center area
+
+  if (totalHeight > availableSpace) {
+    const overlapNeeded = totalHeight - availableSpace + 100;
+    edc.style.marginBottom = `-${overlapNeeded}px`;
+  } else {
+    edc.style.marginBottom = `-${desiredOverlap}px`;
+  }
+}
+
+// Run on load + resize (just in case)
+window.addEventListener('load', fixDesktopOverlap);
+window.addEventListener('resize', fixDesktopOverlap);
+
+// Slider
 let i = 0;
+const slides = document.querySelectorAll('.slides');
 setInterval(() => {
   slides[i].classList.remove('active');
   i = (i + 1) % slides.length;
