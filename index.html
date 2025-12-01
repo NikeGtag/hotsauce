@@ -16,21 +16,22 @@
     overflow-x:hidden;
   }
 
-  /* CONTACT BUTTON */
   .contact-btn-fixed{
-    position:fixed;top:15px;right:15px;
+    position:fixed;top:20px;right:20px;
     background:#ff3400;color:#000;
-    font-size:1.5rem;padding:0.9rem 2rem;
+    font-size:1.8rem;padding:1rem 3rem;
     border-radius:50px;z-index:999999;
-    box-shadow:0 0 60px #ff3400;transition:.4s;
+    box-shadow:0 0 70px #ff3400;transition:.4s;
   }
   .contact-btn-fixed:hover{transform:scale(1.2);background:#ff5722;}
+  @media(max-width:768px){
+    .contact-btn-fixed{top:12px;right:12px;font-size:1.5rem;padding:0.9rem 2.2rem;}
+  }
 
-  /* HERO */
   .hero{
     position:relative;
     height:100vh;
-    min-height:620px;
+    min-height:700px;
     border-bottom:18px solid #ff3400;
     box-shadow:0 0 140px rgba(255,52,0,1);
     overflow:hidden;
@@ -46,64 +47,85 @@
     position:absolute;top:50%;left:50%;
     transform:translate(-50%,-50%);
     text-align:center;z-index:10;
-    width:94%;
+    width:96%;
   }
 
-  /* EDC — BLACK OUTLINE, NO OVERLAP */
+  /* EDC — BLACK OUTLINE */
   .edc{
     color:#ff3400;
-    -webkit-text-stroke:7px #000;
-    text-stroke:7px #000;
+    -webkit-text-stroke:9px #000;
+    text-stroke:9px #000;
     font-weight:900;
-    line-height:0.8;
+    line-height:0.78;
   }
-  h1{font-size:inherit;margin-top:-4vw;} /* pulls HOTSAUCES up cleanly */
 
-  /* DESKTOP — MASSIVE AND PERFECT */
+  /* MOBILE — UNTOUCHED (your last working version) */
+  @media(max-width:768px){
+    .hero{min-height:620px;}
+    .edc{
+      font-size:20vw;
+      letter-spacing:4vw;
+      -webkit-text-stroke:6px #000;
+      margin-bottom:-11vw;
+    }
+    h1{font-size:13vw;letter-spacing:2.5vw;margin-top:0;}
+    .tagline{font-size:8vw;color:#fff;margin:14vw 0 12vw;letter-spacing:5px;}
+    .btn{
+      display:block;width:88%;max-width:420px;margin:18px auto;
+      font-size:9.5vw;padding:5.5vw 0;border-radius:16px;
+      background:#ff3400;color:#000;box-shadow:0 0 90px #ff3400;
+    }
+  }
+
+  /* DESKTOP ONLY — FIXED OVERLAP */
   @media(min-width:769px){
-    .edc{font-size:380px;letter-spacing:24px;margin-bottom:-90px;}
-    h1{font-size:190px;letter-spacing:12px;}
-    .tagline{font-size:48px;color:#fff;letter-spacing:10px;margin:70px 0;}
-    .btn{font-size:52px;padding:28px 110px;background:#ff3400;color:#000;
-         border-radius:16px;box-shadow:0 0 100px #ff3400;margin:0 30px;}
+    .content{
+      padding-top:0; /* reset any previous shift */
+    }
+    .edc{
+      font-size:380px;           /* huge */
+      letter-spacing:26px;
+      margin-bottom:-160px;      /* pulls HOTSAUCES up without overlap */
+    }
+    h1{
+      font-size:220px;
+      letter-spacing:14px;
+      margin-top:0;
+      margin-bottom:40px;
+    }
+    .tagline{
+      font-size:52px;
+      color:#fff;
+      letter-spacing:12px;
+      margin:40px 0 80px;
+    }
+    .btn{
+      display:inline-block;
+      background:#ff3400;color:#000;
+      font-size:56px;
+      padding:32px 120px;
+      margin:0 35px;
+      border-radius:20px;
+      box-shadow:0 0 110px #ff3400;
+      transition:.4s;
+    }
     .btn:hover{transform:scale(1.15);background:#ff5722;}
   }
 
-  /* MOBILE — NOW ACTUALLY INSANE */
-  @media(max-width:768px){
-    .edc{
-      font-size:19vw;
-      letter-spacing:3.5vw;
-      -webkit-text-stroke:5px #000;
-      margin-bottom:-10vw;
-    }
-    h1{font-size:12.5vw;letter-spacing:2vw;}
-    .tagline{font-size:7.8vw;color:#fff;margin:12vw 0 10vw;letter-spacing:4px;}
-    .btn{
-      display:block;width:88%;max-width:400px;margin:15px auto;
-      font-size:9vw;padding:5vw 0;border-radius:14px;
-      background:#ff3400;color:#000;box-shadow:0 0 80px #ff3400;
-    }
-    .btn:hover{background:#ff5722;transform:scale(1.08);}
-  }
-
-  /* BACKGROUND IMAGES */
   .slide1{background-image:url('https://images.unsplash.com/photo-1608896093086-4e8e6c2b3e2e?q=80&w=2400&auto=format&fit=crop');}
   .slide2{background-image:url('https://images.unsplash.com/photo-1625225233312-9dd7d67c8e8c?q=80&w=2400&auto=format&fit=crop');}
   .slide3{background-image:url('https://images.unsplash.com/photo-1603133872873-270376e6ff33?q=80&w=2400&auto=format&fit=crop');}
 
-  /* CONTACT SECTION */
-  .contact-section{padding:140px 20px 160px;text-align:center;background:#000;}
-  .contact-section h2{font-size:100px;letter-spacing:14px;margin-bottom:60px;}
-  .contact-info{font-size:38px;line-height:1.8;}
+  .contact-section{padding:160px 20px 180px;text-align:center;background:#000;}
+  .contact-section h2{font-size:120px;letter-spacing:18px;margin-bottom:80px;color:#ff3400;}
+  .contact-info{font-size:46px;line-height:1.8;color:#ff3400;}
   .contact-info a{color:#ff3400;text-decoration:none;}
   @media(max-width:768px){
-    .contact-section h2{font-size:58px;}
-    .contact-info{font-size:26px;}
-    .btn{display:block;width:88%;max-width:380px;margin:20px auto;font-size:36px;padding:20px 0;}
+    .contact-section h2{font-size:64px;}
+    .contact-info{font-size:30px;}
   }
 
-  footer{color:#888;padding:60px 20px;font-size:20px;text-align:center;letter-spacing:4px;}
+  footer{color:#888;padding:70px 20px;font-size:22px;text-align:center;letter-spacing:4px;}
 </style>
 </head>
 <body>
