@@ -4,7 +4,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>EDC HOTSAUCES | VETERAN MADE | (602) 318-8206</title>
-<meta name="description" content="Arizona's hottest small-batch hot sauces. Veteran made." />
 <link rel="icon" href="favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 <style>
@@ -27,117 +26,122 @@
     transition:all .4s;
   }
   .contact-btn-fixed:hover{background:#ff5722;transform:scale(1.2);}
-  @media(max-width:768px){.contact-btn-fixed{top:15px;right:15px;font-size:1.4rem;padding:1rem 2rem;}}
+  @media(max-width:768px){.contact-btn-fixed{top:12px;right:12px;font-size:1.4rem;padding:0.9rem 1.8rem;}}
 
-  .header-slider,.mobile-header{
-    position:relative;height:90vh;min-height:600px;
+  /* HERO — SAME FOR DESKTOP & MOBILE NOW */
+  .hero{
+    position:relative;
+    height:100vh;
+    min-height:650px;
     border-bottom:16px solid #ff3400;
     box-shadow:0 0 120px rgba(255,52,0,1);
     overflow:hidden;
   }
-  .slides,.mobile-slide{
+  .slides{
     position:absolute;inset:0;background-size:cover;background-position:center;
     opacity:0;transition:opacity 2s;
   }
-  .slides.active,.mobile-slide.active{opacity:1;}
+  .slides.active{opacity:1;}
   .slide1{background-image:url('https://images.unsplash.com/photo-1608896093086-4e8e6c2b3e2e?q=80&w=2400&auto=format&fit=crop');}
   .slide2{background-image:url('https://images.unsplash.com/photo-1625225233312-9dd7d67c8e8c?q=80&w=2400&auto=format&fit=crop');}
   .slide3{background-image:url('https://images.unsplash.com/photo-1603133872873-270376e6ff33?q=80&w=2400&auto=format&fit=crop');}
 
-  .header-overlay,.mobile-overlay{
-    position:absolute;inset:0;background:rgba(0,0,0,0.85);
-    z-index:2;pointer-events:none;
-  }
+  .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.85);pointer-events:none;z-index:2;}
 
-  .header-content,.mobile-content{
-    position:absolute;top:50%;left:50%;
+  .content{
+    position:absolute;
+    top:50%;left:50%;
     transform:translate(-50%,-50%);
-    text-align:center;z-index:10;width:96%;
+    text-align:center;
+    z-index:10;
+    width:96%;
+    padding:2rem;
   }
 
-  /* EDC = KING, BUT CLEAN */
   .edc{
-    font-size:16rem;            /* huge but controlled */
-    letter-spacing:16px;
+    font-size:18vw;           /* scales perfectly with screen width */
+    max-font-size:220px;      /* caps it on big screens */
+    letter-spacing:1.2vw;
     color:#ff3400;
     text-shadow:10px 10px 0 #000;
-    line-height:0.9;
-    margin-bottom:-30px;        /* pulls HOTSAUCES up cleanly */
+    line-height:0.85;
+    margin-bottom:-2vw;
   }
   h1{
-    font-size:9rem;
-    letter-spacing:10px;
+    font-size:10vw;
+    max-font-size:110px;
+    letter-spacing:0.8vw;
     text-shadow:8px 8px 0 #000;
     margin-top:0;
   }
   .tagline{
-    font-size:3.4rem;
-    margin:3.5rem 0 4.5rem;
+    font-size:4.5vw;
+    max-font-size:48px;
+    margin:5vw 0 7vw;
     color:#fff;
     letter-spacing:6px;
   }
   .btn{
     display:inline-block;
     background:#ff3400;color:#000;
-    font-size:3.4rem;padding:2rem 7rem;
-    margin:1.5rem;
+    font-size:5vw;
+    max-font-size:54px;
+    padding:2.5vw 8vw;
+    margin:1.5vw;
     text-decoration:none;
     box-shadow:0 0 80px rgba(255,52,0,1);
     transition:all .4s;
   }
-  .btn:hover{background:#ff5722;transform:scale(1.2);}
+  .btn:hover{background:#ff5722;transform:scale(1.15);}
 
-  .contact-section{padding:180px 20px 140px;text-align:center;}
-  .contact-section h2{font-size:10rem;letter-spacing:16px;margin-bottom:80px;}
-  .contact-info{font-size:3.2rem;line-height:1.8;margin-bottom:80px;}
+  .contact-section{
+    padding:180px 20px 140px;
+    text-align:center;
+    background:#000;
+  }
+  .contact-section h2{
+    font-size:12vw;
+    max-font-size:130px;
+    letter-spacing:12px;
+    margin-bottom:80px;
+  }
+  .contact-info{
+    font-size:5vw;
+    max-font-size:52px;
+    line-height:1.8;
+    margin-bottom:80px;
+  }
   .contact-info a{color:#ff3400;text-decoration:none;}
 
-  /* MOBILE — STILL CLEAN */
-  @media(max-width:768px){
-    .header-slider{display:none !important;}
-    .mobile-header{display:block !important;height:70vh;min-height:520px;}
-    .edc{font-size:10rem;letter-spacing:10px;margin-bottom:-15px;}
-    h1{font-size:6.5rem;}
-    .tagline{font-size:2.2rem;margin:2rem 0;}
-    .btn{font-size:2.6rem;padding:1.6rem 5rem;}
-    .contact-section h2{font-size:6.5rem;}
-    .contact-info{font-size:2.2rem;}
+  footer{
+    color:#888;
+    padding:4rem;
+    font-size:1.6rem;
+    text-align:center;
+    letter-spacing:3px;
   }
-
-  footer{color:#888;padding:4rem;font-size:1.4rem;text-align:center;letter-spacing:3px;}
 </style>
 </head>
 <body>
 
 <a href="#contact" class="contact-btn-fixed">CONTACT</a>
 
-<header class="header-slider">
+<!-- SINGLE HERO THAT WORKS EVERYWHERE -->
+<section class="hero">
   <div class="slides slide1 active"></div>
   <div class="slides slide2"></div>
   <div class="slides slide3"></div>
-  <div class="header-overlay"></div>
-  <div class="header-content">
+  <div class="overlay"></div>
+  <div class="content">
     <div class="edc">EDC</div>
     <h1>HOTSAUCES</h1>
     <p class="tagline">Veteran Made Heat • Handmade Daily</p>
     <a href="tel:+16023188206" class="btn">CALL (602) 318-8206</a>
     <a href="mailto:Jakeus2.0@gmail.com" class="btn">ORDER NOW</a>
   </div>
-</header>
+</section>
 
-<header class="mobile-header" style="display:none;">
-  <div class="mobile-slide slide1 active"></div>
-  <div class="mobile-slide slide2"></div>
-  <div class="mobile-slide slide3"></div>
-  <div class="mobile-overlay"></div>
-  <div class="mobile-content">
-    <div class="edc">EDC</div>
-    <h1>HOTSAUCES</h1>
-    <p class="tagline">Veteran Made Heat</p>
-    <a href="tel:+16023188206" class="btn">CALL (602) 318-8206</a>
-  </div>
-</header>
-
+<!-- CONTACT -->
 <section class="contact-section" id="contact">
   <h2>CONTACT</h2>
   <div class="contact-info">
@@ -156,19 +160,20 @@
 </footer>
 
 <script>
-document.querySelectorAll('.slides, .mobile-slide').forEach(set => {
-  let i = 0;
-  setInterval(() => {
-    set[i].classList.remove('active');
-    i = (i + 1) % set.length;
-    set[i].classList.add('active');
-  }, 4000);
-});
+// Slider
+const slides = document.querySelectorAll('.slides');
+let i = 0;
+setInterval(() => {
+  slides[i].classList.remove('active');
+  i = (i + 1) % slides.length;
+  slides[i].classList.add('active');
+}, 4000);
 
-document.querySelector('.contact-btn-fixed').addEventListener('click', e => {
+// Smooth scroll
+document.querySelector('.contact-btn-fixed').onclick = e => {
   e.preventDefault();
   document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
-});
+};
 </script>
 </body>
 </html>
