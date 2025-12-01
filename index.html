@@ -18,7 +18,6 @@
     text-transform:uppercase;
   }
 
-  /* FIXED CONTACT BUTTON */
   .contact-btn-fixed{
     position:fixed;top:20px;right:20px;
     background:#ff3400;color:#000;
@@ -30,7 +29,6 @@
   .contact-btn-fixed:hover{background:#ff5722;transform:scale(1.2);}
   @media(max-width:768px){.contact-btn-fixed{top:15px;right:15px;font-size:1.4rem;padding:1rem 2rem;}}
 
-  /* HERO */
   .header-slider,.mobile-header{
     position:relative;height:90vh;min-height:600px;
     border-bottom:16px solid #ff3400;
@@ -42,7 +40,6 @@
     opacity:0;transition:opacity 2s;
   }
   .slides.active,.mobile-slide.active{opacity:1;}
-
   .slide1{background-image:url('https://images.unsplash.com/photo-1608896093086-4e8e6c2b3e2e?q=80&w=2400&auto=format&fit=crop');}
   .slide2{background-image:url('https://images.unsplash.com/photo-1625225233312-9dd7d67c8e8c?q=80&w=2400&auto=format&fit=crop');}
   .slide3{background-image:url('https://images.unsplash.com/photo-1603133872873-270376e6ff33?q=80&w=2400&auto=format&fit=crop');}
@@ -58,31 +55,24 @@
     text-align:center;z-index:10;width:96%;
   }
 
-  /* EDC = GOD MODE */
+  /* EDC = KING, BUT CLEAN */
   .edc{
-    font-size:18rem;           /* huge on desktop */
-    letter-spacing:18px;
+    font-size:16rem;            /* huge but controlled */
+    letter-spacing:16px;
     color:#ff3400;
-    text-shadow:
-      12px 12px 0 #000,
-      -12px -12px 0 #000,
-      0 0 80px #ff3400,
-      0 0 0 120px #ff0000;
-    line-height:0.8;
-    animation: glow 3s infinite alternate;
+    text-shadow:10px 10px 0 #000;
+    line-height:0.9;
+    margin-bottom:-30px;        /* pulls HOTSAUCES up cleanly */
   }
-  @keyframes glow{from{text-shadow:12px 12px 0 #000,-12px -12px 0 #000,0 0 80px #ff3400,0 0 120px #ff0000;}
-                 to{text-shadow:15px 15px 0 #000,-15px -15px 0 #000,0 0 100px #ff3400,0 0 160px #ff0000;}}
-
   h1{
     font-size:9rem;
-    margin-top:-60px;
     letter-spacing:10px;
-    text-shadow:10px 10px 0 #000;
+    text-shadow:8px 8px 0 #000;
+    margin-top:0;
   }
   .tagline{
     font-size:3.4rem;
-    margin:3rem 0 4.5rem;
+    margin:3.5rem 0 4.5rem;
     color:#fff;
     letter-spacing:6px;
   }
@@ -95,20 +85,19 @@
     box-shadow:0 0 80px rgba(255,52,0,1);
     transition:all .4s;
   }
-  .btn:hover{background:#ff5722;transform:scale(1.2);box-shadow:0 0 110px #ff3400;}
+  .btn:hover{background:#ff5722;transform:scale(1.2);}
 
-  /* CONTACT SECTION */
   .contact-section{padding:180px 20px 140px;text-align:center;}
   .contact-section h2{font-size:10rem;letter-spacing:16px;margin-bottom:80px;}
   .contact-info{font-size:3.2rem;line-height:1.8;margin-bottom:80px;}
-  .contact-info a{color:#ff3400;}
+  .contact-info a{color:#ff3400;text-decoration:none;}
 
-  /* MOBILE — EDC STILL DOMINATES */
+  /* MOBILE — STILL CLEAN */
   @media(max-width:768px){
     .header-slider{display:none !important;}
     .mobile-header{display:block !important;height:70vh;min-height:520px;}
-    .edc{font-size:11rem;letter-spacing:10px;}
-    h1{font-size:6.5rem;margin-top:-30px;}
+    .edc{font-size:10rem;letter-spacing:10px;margin-bottom:-15px;}
+    h1{font-size:6.5rem;}
     .tagline{font-size:2.2rem;margin:2rem 0;}
     .btn{font-size:2.6rem;padding:1.6rem 5rem;}
     .contact-section h2{font-size:6.5rem;}
@@ -122,7 +111,6 @@
 
 <a href="#contact" class="contact-btn-fixed">CONTACT</a>
 
-<!-- DESKTOP HERO -->
 <header class="header-slider">
   <div class="slides slide1 active"></div>
   <div class="slides slide2"></div>
@@ -137,7 +125,6 @@
   </div>
 </header>
 
-<!-- MOBILE HERO -->
 <header class="mobile-header" style="display:none;">
   <div class="mobile-slide slide1 active"></div>
   <div class="mobile-slide slide2"></div>
@@ -151,7 +138,6 @@
   </div>
 </header>
 
-<!-- CONTACT -->
 <section class="contact-section" id="contact">
   <h2>CONTACT</h2>
   <div class="contact-info">
@@ -170,7 +156,6 @@
 </footer>
 
 <script>
-// Slider
 document.querySelectorAll('.slides, .mobile-slide').forEach(set => {
   let i = 0;
   setInterval(() => {
@@ -180,7 +165,6 @@ document.querySelectorAll('.slides, .mobile-slide').forEach(set => {
   }, 4000);
 });
 
-// Smooth scroll
 document.querySelector('.contact-btn-fixed').addEventListener('click', e => {
   e.preventDefault();
   document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
