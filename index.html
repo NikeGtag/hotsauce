@@ -20,7 +20,6 @@
     box-shadow:0 0 140px rgba(255,52,0,1);overflow:hidden;}
   .slides{position:absolute;inset:0;background-size:cover;background-position:center;
     opacity:0;transition:opacity 2s;}
-  }
   .slides.active{opacity:1;}
   .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.88);z-index:2;}
 
@@ -36,26 +35,32 @@
     line-height:0.8;
   }
 
-  /* MOBILE ONLY — HOTSAUCES MOVED WAY DOWN */
+  /* MOBILE ONLY — EDC IS NOW INSANELY BOLD */
   @media(max-width:768px){
     .edc{
-      font-size:24vw;
-      letter-spacing:5vw;
-      -webkit-text-stroke:9px #000;
-      margin-bottom:-8vw;            /* less overlap */}
+      font-size:26vw !important;                    /* even bigger */
+      letter-spacing:6vw !important;
+      -webkit-text-stroke:14px #000 !important;     /* nuclear thick outline */
+      text-stroke:14px #000 !important;
+      text-shadow: 8px 8px 0px #000;                /* extra punch */
+      margin-bottom:-6vw;
+    }
     h1{
       font-size:13vw;
       letter-spacing:2.5vw;
-      margin-top:10vw !important;    /* THIS pushes HOTSAUCES down */}
+      margin-top:10vw;           /* keeps HOTSAUCES low as you wanted */
+    }
     .tagline{
-      font-size:8vw;color:#fff;margin:16vw 0 14vw;letter-spacing:5px;}
+      font-size:8vw;color:#fff;margin:16vw 0 14vw;letter-spacing:5px;
+    }
     .btn{
       display:block;width:88%;max-width:420px;margin:20px auto;
       font-size:9.5vw;padding:5.5vw 0;border-radius:16px;
-      background:#ff3400;color:#000;box-shadow:0 0 90px #ff3400;}
+      background:#ff3400;color:#000;box-shadow:0 0 90px #ff3400;
+    }
   }
 
-  /* DESKTOP — 100% UNTOUCHED & PERFECT */
+  /* DESKTOP — STILL PERFECT, UNTOUCHED */
   @media(min-width:769px){
     .edc{font-size:420px;letter-spacing:28px;}
     h1{font-size:190px;letter-spacing:14px;}
@@ -113,7 +118,7 @@
 <footer>© 2025 EDC HOTSAUCES • VETERAN OWNED • ARIZONA</footer>
 
 <script>
-// Desktop stays perfect (slightly lower as you wanted)
+// Desktop stays perfect
 function fixDesktop() {
   if (window.innerWidth <= 768) return;
   document.querySelector('.content').style.transform = 'translate(-50%, -40%)';
