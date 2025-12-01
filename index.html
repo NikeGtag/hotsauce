@@ -4,95 +4,101 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>EDC Hotsauces | Veteran Made Heat | (602) 318-8206</title>
-<meta name="description" content="Arizona's hottest small-batch hot sauces. LOS ALAMOS MIDNIGHT HEAT.XXXTREME CHARLIE DELTA. AGENT ORANGE. Handmade daily." />
+<meta name="description" content="Arizona's hottest small-batch hot sauces. LOS ALAMOS MIDNIGHT HEAT • XXXTREME CHARLIE DELTA • AGENT ORANGE. Veteran made." />
 <link rel="icon" href="favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<!-- Military stencil font (free & fast) -->
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Inter',sans-serif;background:#000;color:#ff3400;min-height:100vh;display:flex;flex-direction:column;position:relative;overflow-x:hidden;}
+  body{font-family:'Inter',sans-serif;background:#000;color:#ff3400;overflow-x:hidden;}
   
-  /* DESKTOP HEADER */
-  .header-slider{position:relative;height:90vh;min-height:600px;overflow:hidden;border-bottom:10px solid #ff3400;box-shadow:0 0 80px rgba(255,52,0,0.8);}
-  .slides{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 2s ease-in-out;}
+  /* DESKTOP */
+  .header-slider{position:relative;height:90vh;min-height:600px;overflow:hidden;border-bottom:12px solid #ff3400;box-shadow:0 0 90px rgba(255,52,0,0.9);}
+  .slides{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 2s;}
   .slides.active{opacity:1;z-index:1;}
   .slide1{background-image:url('https://images.unsplash.com/photo-1608896093086-4e8e6c2b3e2e?q=80&w=2400&auto=format&fit=crop');}
   .slide2{background-image:url('https://images.unsplash.com/photo-1625225233312-9dd7d67c8e8c?q=80&w=2400&auto=format&fit=crop');}
   .slide3{background-image:url('https://images.unsplash.com/photo-1603133872873-270376e6ff33?q=80&w=2400&auto=format&fit=crop');}
   
-  .header-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.78);z-index:2;}
-  .header-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:10;padding:2rem;width:90%;}
-  h1{font-size:6rem;font-weight:900;line-height:0.9;text-transform:uppercase;letter-spacing:-2px;}
-  @media(min-width:768px){h1{font-size:11rem;}}
+  .header-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.80);z-index:2;}
+  .header-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:10;width:90%;padding:2rem;}
   
-  .btn{display:inline-block;background:#ff3400;color:#000;font-weight:900;font-size:2.6rem;padding:1.6rem 5rem;border-radius:1rem;text-decoration:none;margin:2rem 1rem;transition:all .4s;box-shadow:0 0 40px rgba(255,52,0,0.9);}
-  .btn:hover{background:#ff5722;transform:scale(1.12);box-shadow:0 0 60px rgba(255,52,0,1);}
+  /* EDC = MILITARY STENCIL */
+  .edc{font-family:'Staatliches',sans-serif;font-size:9rem;letter-spacing:8px;color:#ff3400;text-shadow:0 0 40px #000, 8px 8px 0 #000;}
+  @media(min-width:768px){.edc{font-size:16rem;letter-spacing:12px;}}
   
-  /* MOBILE HEADER */
+  h1{font-family:'Staatliches',sans-serif;font-size:7rem;letter-spacing:4px;margin-top:-30px;}
+  @media(min-width:768px){h1{font-size:12rem;margin-top:-50px;}}
+  
+  .tagline{font-size:2.8rem;margin:2rem 0 3rem;color:#fff;font-weight:900;letter-spacing:3px;}
+  @media(min-width:768px){.tagline{font-size:4rem;}}
+  
+  .btn{display:inline-block;background:#ff3400;color:#000;font-family:'Staatliches',sans-serif;font-size:2.8rem;padding:1.6rem 5rem;border-radius:0;text-decoration:none;margin:1.5rem;transition:all .4s;box-shadow:0 0 50px rgba(255,52,0,1);}
+  .btn:hover{background:#ff5722;transform:scale(1.15);box-shadow:0 0 70px rgba(255,87,34,1);}
+  
+  /* MOBILE */
   @media(max-width:768px){
     .header-slider{display:none;}
-    .mobile-header{display:block;position:relative;height:70vh;min-height:450px;overflow:hidden;border-bottom:10px solid #ff3400;box-shadow:0 0 60px rgba(255,52,0,0.8);}
+    .mobile-header{display:block;height:70vh;min-height:480px;position:relative;overflow:hidden;border-bottom:12px solid #ff3400;box-shadow:0 0 70px rgba(255,52,0,0.9);}
     .mobile-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 2s;}
     .mobile-slide.active{opacity:1;}
-    .mobile-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.8);}
-    .mobile-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:10;width:90%;}
-    .mobile-content h1{font-size:4rem;line-height:1;}
-    .mobile-content .btn{font-size:2.2rem;padding:1.2rem 3.5rem;}
+    .mobile-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.85);}
+    .mobile-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:10;width:94%;}
+    .edc{font-size:7.5rem;letter-spacing:6px;}
+    h1{font-size:5.5rem;margin-top:-20px;}
+    .tagline{font-size:2rem;margin:1.5rem 0;}
+    .btn{font-size:2.4rem;padding:1.2rem 3.5rem;}
   }
   
-  footer{background:#000;color:#666;padding:3rem 0;font-size:1rem;text-align:center;margin-top:auto;}
+  footer{background:#000;color:#888;padding:3rem 0;font-size:1.1rem;text-align:center;}
 </style>
 </head>
 <body>
 
-<!-- DESKTOP HEADER -->
+<!-- DESKTOP -->
 <header class="header-slider">
   <div class="slides slide1 active"></div>
   <div class="slides slide2"></div>
   <div class="slides slide3"></div>
   <div class="header-overlay"></div>
   <div class="header-content">
-    <h1>EDCHOT<br><span style="color:#ff3400;">SAUCES</span></h1>
-    <p style="font-size:3rem;margin:1.5rem 0;color:#fff;font-weight:900;">VETERAN MADE HEAT • HANDMADE DAILY</p>
+    <div class="edc">EDC</div>
+    <h1>HOTSAUCES</h1>
+    <p class="tagline">VETERAN MADE HEAT • HANDMADE DAILY</p>
     <a href="tel:+16023188206" class="btn">CALL (602) 318-8206</a>
     <a href="mailto:Jakeus2.0@gmail.com" class="btn">ORDER NOW</a>
   </div>
 </header>
 
-<!-- MOBILE HEADER -->
+<!-- MOBILE -->
 <header class="mobile-header" style="display:none;">
   <div class="mobile-slide slide1 active"></div>
   <div class="mobile-slide slide2"></div>
   <div class="mobile-slide slide3"></div>
   <div class="mobile-overlay"></div>
   <div class="mobile-content">
-    <h1>EDCHOT<br><span style="color:#ff3400;">SAUCES</span></h1>
-    <p style="font-size:2rem;color:#fff;margin:1rem 0;">Arizona Heat</p>
+    <div class="edc">EDC</div>
+    <h1>HOTSAUCES</h1>
+    <p class="tagline">Veteran Made Heat</p>
     <a href="tel:+16023188206" class="btn">CALL (602) 318-8206</a>
   </div>
 </header>
 
 <footer>
-  © 2025 EDC hot Sauces •  • Handcrafted daily • <a href="mailto:Jakeus2.0@gmail.com" style="color:#ff3400;">Jakeus2.0@gmail.com</a>
+  © 2025 EDC Hotsauces • Veteran Owned • Arizona • <a href="mailto:Jakeus2.0@gmail.com" style="color:#ff3400;">Jakeus2.0@gmail.com</a>
 </footer>
 
 <script>
-// Desktop slider
-const slides = document.querySelectorAll('.slides');
-let current = 0;
-setInterval(() => {
-  slides[current].classList.remove('active');
-  current = (current + 1) % slides.length;
-  slides[current].classList.add('active');
-}, 4500);
-
-// Mobile slider
-const mobileSlides = document.querySelectorAll('.mobile-slide');
-let mobileCurrent = 0;
-setInterval(() => {
-  mobileSlides[mobileCurrent].classList.remove('active');
-  mobileCurrent = (mobileCurrent + 1) % mobileSlides.length;
-  mobileSlides[mobileCurrent].classList.add('active');
-}, 4500);
+// Shared slider logic
+document.querySelectorAll('.slides, .mobile-slide').forEach(set => {
+  let i = 0;
+  setInterval(() => {
+    set[i].classList.remove('active');
+    i = (i + 1) % set.length;
+    set[i].classList.add('active');
+  }, 4200);
+});
 </script>
 </body>
 </html>
